@@ -1,0 +1,61 @@
+/* ===== NAVBAR PRINCIPALE ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5px 60px;
+  font-family: "Imperial Script", cursive;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== LIENS ===== */
+.navbar a {
+  text-decoration: inherit;
+  color: black;
+  font-size: 56px;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* effet hover élégant */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: black;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ===== LOGO (si tu en as un au centre comme sur ton image) ===== */
+.navbar img {
+  height: 250px;      /* taille du logo */
+  width: auto;
+}
+
+
+
+/* ===== VERSION RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .navbar a {
+    margin: 10px;
+  }
+}

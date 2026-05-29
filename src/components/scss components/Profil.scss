@@ -103,14 +103,14 @@
 
 .bubble {
   font-family: "Imperial Script", cursive;
-  width: 360px;
-  height: 360px;
+  width: 480px;
+  height: 480px;
   padding: 10px;
   background: linear-gradient(135deg, #e89ab0, #450920); /* bordeaux rose */
   color: white;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  font-size: 25px;
+  font-size: 38px;
   line-height: 1.5;
   position: relative;
 }

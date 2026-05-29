@@ -1,7 +1,12 @@
 .coton {
-  margin-left: 120px;
+  margin-left: 100px;
     margin-top: 50px;
     width: 30vw;
+     transition: transform 0.4s ease;
+}
+
+.coton:hover {
+  transform: scale(1.15);
 }
 
 /* Le conteneur principal qui gère l'alignement côte à côte */
@@ -26,7 +31,7 @@
 
 /* Gestion du texte */
 .text-box {
-  flex: 1; /* Permet au texte de prendre l'espace restant */
+  flex: 1.5; /* Permet au texte de prendre l'espace restant */
 }
 
 .slogan {

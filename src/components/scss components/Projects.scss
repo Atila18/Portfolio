@@ -1,0 +1,65 @@
+.coton {
+  margin-left: 100px;
+  margin-top: 87px;
+    width: 25vw;
+     transition: transform 0.4s ease;
+}
+
+.coton:hover {
+  transform: scale(1.15);
+}
+
+/* Le conteneur principal qui gère l'alignement côte à côte */
+.container {
+  display: flex;
+  align-items: center; /* Aligne verticalement l'image et le texte au centre */
+  justify-content: space-between; /* Espace l'image à gauche et le texte à droite */
+  padding: 35px;
+}
+
+/* Gestion de l'image pour qu'elle reste fluide et propre */
+.image-box {
+  flex: 1; /* Permet à l'image de prendre un espace équitable */
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 500px; /* Ajustez la taille max selon vos besoins */
+  height: auto;
+  border-radius: 8px; /* Optionnel : adoucit les angles de l'image */
+}
+
+/* Gestion du texte */
+.text-box {
+  flex: 1.5; /* Permet au texte de prendre l'espace restant */
+}
+
+.slogan {
+  font-family: Arial, Helvetica, sans-serif; /* Style de police élégant */
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+/* Responsive Projet */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column !important; /* Force la colonne */
+        width: 90% !important;             /* Force le conteneur à prendre 90% de la page */
+        margin: 0 auto !important;         /* Centre le conteneur */
+        padding: 15px;
+    }
+
+    .container img {
+      margin-left: 0;
+        width: 100% !important;            /* L'image prend toute la largeur du bloc */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .container p {
+        width: 100% !important;            /* Le texte prend toute la largeur */
+        text-align: center;
+        line-height: 1.5;
+    }
+  }

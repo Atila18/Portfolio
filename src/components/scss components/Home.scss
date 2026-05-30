@@ -1,45 +1,86 @@
-.coton {
-  margin-left: 120px;
-    margin-top: 50px;
-    width: 30vw;
-}
 
 /* Le conteneur principal qui gère l'alignement côte à côte */
-.container {
+.bloc {
   display: flex;
   align-items: center; /* Aligne verticalement l'image et le texte au centre */
   justify-content: space-between; /* Espace l'image à gauche et le texte à droite */
-  padding: 20px;
-}
-
-/* Gestion de l'image pour qu'elle reste fluide et propre */
-.image-box {
-  flex: 1; /* Permet à l'image de prendre un espace équitable */
-}
-
-.image-box img {
-  width: 100%;
-  max-width: 500px; /* Ajustez la taille max selon vos besoins */
-  height: auto;
-  border-radius: 8px; /* Optionnel : adoucit les angles de l'image */
+  padding: 35px;
 }
 
 /* Gestion du texte */
-.text-box {
+.box-text {
   flex: 1; /* Permet au texte de prendre l'espace restant */
 }
 
-.slogan {
-  font-family: "Imperial Script", cursive; /* Style de police élégant */
-  font-size: 56px;
-  color: black;
+.titre {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 28px;
+  color: rgb(0, 0, 0);
   margin: 0;
 }
 
-/* Optionnel : Rend le design adaptatif (les blocs s'empilent sur téléphone) */
+.intro {
+  font-family: "Imperial Script", cursive;
+  font-size: 42px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn-pro {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #450920, #e89ab0);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pro:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(88, 31, 53, 0.548);
+}
+
+.btn-pro:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Pour les tablettes et mobiles (largeur max de 768px) */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
+    
+    /* 1. La Navigation : On passe en colonne */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* 2. Le Contenu : On enlève les marges trop larges */
+    .main-content {
+        padding: 10px;
+    }
+
+    /* 3. Les Cartes (ex: Page Profil) : On les empile */
+    .ton-container-de-cartes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. Texte : Réduire un peu la taille pour éviter les débordements */
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
 }

@@ -1,0 +1,86 @@
+/* Définition des couleurs */
+:root {
+  --primary: #fff; /* Couleur d'accent (ex: un bleu violet) */
+  --text-light: #ffffff;
+  --bg-card: #62233A;
+}
+
+.tarifs-bloc {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tarifs-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tarifs-intro {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 800;
+}
+
+.tarifs-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tarif-item {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarif-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.tarif-title {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.tarif-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Pour les tablettes et mobiles (largeur max de 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. La Navigation : On passe en colonne */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* 2. Le Contenu : On enlève les marges trop larges */
+    .main-content {
+        padding: 10px;
+    }
+
+    /* 3. Les Cartes (ex: Page Profil) : On les empile */
+    .ton-container-de-cartes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. Texte : Réduire un peu la taille pour éviter les débordements */
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+}

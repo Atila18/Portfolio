@@ -1,0 +1,144 @@
+.layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* espace entre card et bulle */
+  height: 70vh;
+}
+
+.card {
+  width: 360px;
+  padding: 25px;
+  background: linear-gradient(135deg, #e89ab0, #450920);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.avatar {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.name {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 12px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+    0 0 5px #ffb6c1,
+    0 0 10px #ff7aa2,
+    0 0 20px #ff4d88;
+}
+
+.followers {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 6px;
+  font-size: 32px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.follow-btn {
+    font-size: 30px;
+  margin-top: 5px;
+  padding: 8px 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 20px;
+  background: #ff7aa2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 122, 162, 0.4);
+}
+
+.follow-btn:hover {
+  background: #ff4d88;
+  transform: scale(1.08);
+}
+
+.follow-btn:active {
+  transform: scale(0.95);
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  animation: popHeart 1.5s ease forwards;
+}
+
+@keyframes popHeart {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 480px;
+  height: 480px;
+  padding: 10px;
+  background: linear-gradient(135deg, #e89ab0, #450920); /* bordeaux rose */
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-size: 26px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #8b1e3f;
+}
+
+/* 1. Configuration pour le mobile (Responsive) */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column; /* Force l'empilement vertical */
+        align-items: center;    /* Centre les blocs sur mobile */
+        gap: 20px;              /* Réduit un peu l'espace sur mobile */
+        padding: 20px 10px;
+    }
+
+    .card, .bubble {
+        width: 95%;             /* Occupe presque toute la largeur du téléphone */
+        max-width: 400px;       /* Empêche les éléments de devenir trop larges sur grande tablette */
+        padding: 0;
+    }
+}

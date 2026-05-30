@@ -1,0 +1,81 @@
+.footer-section {
+  width: 100%;
+  padding: 40px 20px 20px 20px;
+  background: rgba(0, 0, 0, 0.2); /* S'adapte mieux au dégradé */
+  backdrop-filter: blur(5px);
+  color: rgb(0, 0, 0);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.footer-col p, .footer-links a {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.486);
+  text-align: center;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+/* Pour les tablettes et mobiles (largeur max de 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. La Navigation : On passe en colonne */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* 2. Le Contenu : On enlève les marges trop larges */
+    .main-content {
+        padding: 10px;
+    }
+
+    /* 3. Les Cartes (ex: Page Profil) : On les empile */
+    .ton-container-de-cartes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. Texte : Réduire un peu la taille pour éviter les débordements */
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+}

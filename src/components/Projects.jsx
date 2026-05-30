@@ -1,19 +1,19 @@
+import coton from './logo/coton.png'
+import "./scss components/Projects.scss"
 
 function Projects() {
   return (
-    <section id="projects" style={{ padding: "60px" }}>
-      <h2>Mes projets</h2>
-
-      <div>
-        <h3>Projet 1</h3>
-        <p>Todo List en React</p>
+    <div class="container">
+            <div class="image-box">
+        <img className='coton' src={coton} alt="Disques démaquillants lavables"></img>
       </div>
-
-      <div>
-        <h3>Projet 2</h3>
-        <p>App météo</p>
+      <div class="text-box">
+        <h1>Projet n°1 - Brin d'Atila</h1>
+        <p class="slogan">Innover selon votre envie !
+          Brin d'Atila crée des accessoires écoresponsables et personnalisables. Chaque pièce est faite avec soin, dans une démarche durable, pour proposer des créations uniques, utiles et adaptées à chacun.
+        </p>
       </div>
-    </section>
+    </div>
   );
 }
 

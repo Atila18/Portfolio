@@ -1,0 +1,123 @@
+/* ===== CENTRAGE ===== */
+div {
+  box-sizing: border-box;
+}
+
+/* ton container inline est remplacé visuellement */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== TITRE ===== */
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+/* ===== INPUTS ===== */
+input,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(68, 32, 52, 0.5);
+  background: rgba(255, 255, 255, 0);
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(77, 40, 54, 0.5);
+}
+
+/* focus premium */
+input:focus,
+textarea:focus {
+  border-color: #450920;
+  box-shadow: 0 0 0 4px #e89ab0(99, 102, 241, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* textarea taille */
+textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+/* ===== BUTTON ===== */
+.send {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #450920, #e89ab0);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(88, 31, 53, 0.548);
+}
+
+/* loading */
+.send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== MESSAGES ===== */
+p .police {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  font-size: 32px;
+  margin: 10px 0 0 0;
+}
+
+p[style*="green"] {
+  color: #1c6e50 !important;
+}
+
+p[style*="red"] {
+  color: #b83131 !important;
+}
+
+/* Pour les tablettes et mobiles (largeur max de 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. La Navigation : On passe en colonne */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* 2. Le Contenu : On enlève les marges trop larges */
+    .main-content {
+        padding: 10px;
+    }
+
+    /* 3. Les Cartes (ex: Page Profil) : On les empile */
+    .ton-container-de-cartes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. Texte : Réduire un peu la taille pour éviter les débordements */
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+}

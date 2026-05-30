@@ -1,20 +1,26 @@
-import coton from './logo/coton.png'
 import './scss components/Home.scss'
+import { useNavigate } from "react-router-dom";
 
-function Home() {
+export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <div class="container">
-        <div class="image-box">
-    <img className='coton' src={coton} alt="Disques démaquillants lavables"></img>
-  </div>
-  <div class="text-box">
-    <p class="slogan">Innover selon votre envie !
-      Brin d'Atila crée des accessoires écoresponsables et personnalisables. Chaque pièce est faite avec soin, dans une démarche durable, pour proposer des créations uniques, utiles et adaptées à chacun.
+    <div className="bloc">
+  <div className="box-text">
+    <h6 className='intro'>"Développeur web passionné par l'art du détail."</h6>
+    <p className="titre">
+      "De l'idée à la ligne de code, j'aime construire des projets numériques qui ont du sens. Découvrez mes réalisations — à l'image de Brin d'Atila — et explorez comment je marie design créatif et développement web."
     </p>
+    <div className='center'>
+      <button className='btn-pro'
+      onClick={() => navigate("/projects")}
+    >
+      Voir mes projets
+    </button>
+    </div>
   </div>
 </div>
+    
   );
 }
-
-export default Home;
   

@@ -1,0 +1,50 @@
+.coton {
+  margin-left: 100px;
+  margin-top: 87px;
+    width: 25vw;
+     transition: transform 0.4s ease;
+}
+
+.coton:hover {
+  transform: scale(1.15);
+}
+
+/* Le conteneur principal qui gère l'alignement côte à côte */
+.container {
+  display: flex;
+  align-items: center; /* Aligne verticalement l'image et le texte au centre */
+  justify-content: space-between; /* Espace l'image à gauche et le texte à droite */
+  padding: 35px;
+}
+
+/* Gestion de l'image pour qu'elle reste fluide et propre */
+.image-box {
+  flex: 1; /* Permet à l'image de prendre un espace équitable */
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 500px; /* Ajustez la taille max selon vos besoins */
+  height: auto;
+  border-radius: 8px; /* Optionnel : adoucit les angles de l'image */
+}
+
+/* Gestion du texte */
+.text-box {
+  flex: 1.5; /* Permet au texte de prendre l'espace restant */
+}
+
+.slogan {
+  font-family: Arial, Helvetica, sans-serif; /* Style de police élégant */
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+/* Optionnel : Rend le design adaptatif (les blocs s'empilent sur téléphone) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

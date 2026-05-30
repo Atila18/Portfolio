@@ -1,0 +1,12 @@
+/* 1. Le conteneur parent prend toute la hauteur de l'écran */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 2. Le contenu principal prend tout l'espace disponible, 
+      ce qui force le footer à descendre tout en bas */
+.main-content {
+  flex: 1; 
+}

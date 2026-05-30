@@ -7,7 +7,7 @@ function Navbar() {
   return (
   <nav className="navbar">
       <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <Link to="/about">Profil</Link>
       <img src={Logo} alt="logo sakura"></img>
       <Link to="/projects">Projets</Link>
       <Link to="/contact">Contact</Link>

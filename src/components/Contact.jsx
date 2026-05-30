@@ -70,11 +70,11 @@ export default function ContactForm() {
           style={{ display: "block", marginBottom: 10, width: "100%" }}
         />
 
-        <button type="submit">
+        <button className="send" type="submit">
           {status === "loading" ? "Envoi..." : "Envoyer"}
         </button>
 
-        {status === "success" && <p style={{ color: "green" }}>Envoyé ✅</p>}
+        {status === "success" && <p className="police" style={{ color: "green" }}>Envoyé ✅</p>}
         {status === "error" && <p className="police" style={{ color: "red" }}>Erreur ❌</p>}
       </form>
     </div>

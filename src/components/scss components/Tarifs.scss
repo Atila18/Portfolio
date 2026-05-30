@@ -58,3 +58,29 @@
   line-height: 1.5;
   margin: 0;
 }
+
+/* Pour les tablettes et mobiles (largeur max de 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. La Navigation : On passe en colonne */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* 2. Le Contenu : On enlève les marges trop larges */
+    .main-content {
+        padding: 10px;
+    }
+
+    /* 3. Les Cartes (ex: Page Profil) : On les empile */
+    .ton-container-de-cartes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. Texte : Réduire un peu la taille pour éviter les débordements */
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+}

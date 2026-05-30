@@ -41,10 +41,25 @@
   margin: 0;
 }
 
-/* Optionnel : Rend le design adaptatif (les blocs s'empilent sur téléphone) */
+/* Responsive Projet */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
+    .container {
+        flex-direction: column !important; /* Force la colonne */
+        width: 90% !important;             /* Force le conteneur à prendre 90% de la page */
+        margin: 0 auto !important;         /* Centre le conteneur */
+        padding: 15px;
+    }
+
+    .container img {
+      margin-left: 0;
+        width: 100% !important;            /* L'image prend toute la largeur du bloc */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .container p {
+        width: 100% !important;            /* Le texte prend toute la largeur */
+        text-align: center;
+        line-height: 1.5;
+    }
   }
-}

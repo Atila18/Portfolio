@@ -126,3 +126,19 @@
   border-bottom: 10px solid transparent;
   border-right: 10px solid #8b1e3f;
 }
+
+/* 1. Configuration pour le mobile (Responsive) */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column; /* Force l'empilement vertical */
+        align-items: center;    /* Centre les blocs sur mobile */
+        gap: 20px;              /* Réduit un peu l'espace sur mobile */
+        padding: 20px 10px;
+    }
+
+    .card, .bubble {
+        width: 95%;             /* Occupe presque toute la largeur du téléphone */
+        max-width: 400px;       /* Empêche les éléments de devenir trop larges sur grande tablette */
+        padding: 0;
+    }
+}

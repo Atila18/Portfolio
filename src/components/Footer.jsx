@@ -1,4 +1,4 @@
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle, FaLinkedin } from "react-icons/fa";
 import "./scss components/Footer.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -17,8 +17,9 @@ export default function Footer() {
         <div className="footer-col">
           <h3>Réseaux</h3>
           <ul className="footer-links">
-            <li><a href="#"><FaGithub /> Github</a></li>
-            <li><a href="#"><FaGoogle /> Indeed</a></li>
+            <li><a href="https://github.com/Atila18" target="_blank" rel="noreferrer"><FaGithub /> Github</a></li>
+            <li><a href="https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-homepage" target="_blank" rel="noreferrer"><FaGoogle /> Indeed</a></li>
+            <li><a href="https://www.linkedin.com/in/cassandra-heroin-1301b4269/" target="_blank" rel="noreferrer"><FaLinkedin /> Linkedin</a></li>
           </ul>
         </div>
       </div>

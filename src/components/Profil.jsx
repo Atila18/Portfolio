@@ -5,30 +5,36 @@ import "./scss components/Profil.scss"
 export default function ProfileCard() {
   const [followed, setFollowed] = useState(false);
   const [showHeart, setShowHeart] = useState(false);
-   // 🔥 initialise depuis localStorage
+
+  // 📊 followers init localStorage
   const [followers, setFollowers] = useState(() => {
     const saved = localStorage.getItem("followers");
-    return saved ? JSON.parse(saved) : 128;
+    return saved ? JSON.parse(saved) : 0;
   });
 
-   // 💾 sauvegarde à chaque changement
+  // 💾 save followers
   useEffect(() => {
     localStorage.setItem("followers", JSON.stringify(followers));
   }, [followers]);
 
+  // 💾 save follow state
+  useEffect(() => {
+    localStorage.setItem("followed", JSON.stringify(followed));
+  }, [followed]);
+
   const handleFollow = () => {
-    setFollowers(prev => (followed ? prev - 1 : prev + 1));
-    setFollowed(!followed);
-    
-  setFollowed(!followed);
+    // 🔁 on utilise la valeur actuelle AVANT update
+    setFollowed(prev => {
+      const newState = !prev;
 
-    // affiche le coeur
+      setFollowers(f => newState ? f + 1 : f - 1);
+
+      return newState;
+    });
+
+    // ❤️ animation coeur
     setShowHeart(true);
-
-    // le cache après l'animation
-    setTimeout(() => {
-      setShowHeart(false);
-    }, 800);
+    setTimeout(() => setShowHeart(false), 800);
   };
 
   return (

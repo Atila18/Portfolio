@@ -1,29 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Atila from "../components/logo/Atila.png"
 import "./scss components/Profil.scss"
 
 export default function ProfileCard() {
   const [followed, setFollowed] = useState(false);
   const [showHeart, setShowHeart] = useState(false);
-  const [followers, setFollowers] = useState(0);
 
-  const handleFollow = () => {
-  if (followed) {
-    setFollowers(followers - 1);
-  } else {
-    setFollowers(followers + 1);
-  }
+  // 📊 followers init localStorage
+const [followers, setFollowers] = useState(() => {
+  const saved = localStorage.getItem("followers");
+  return saved ? JSON.parse(saved) : 0; // 👈 PART À 0
+});
 
-  setFollowed(!followed);
+  // 💾 save followers
+  useEffect(() => {
+    localStorage.setItem("followers", JSON.stringify(followers));
+  }, [followers]);
 
-    // affiche le coeur
-    setShowHeart(true);
+  // 💾 save follow state
+  useEffect(() => {
+    localStorage.setItem("followed", JSON.stringify(followed));
+  }, [followed]);
 
-    // le cache après l'animation
-    setTimeout(() => {
-      setShowHeart(false);
-    }, 800);
-  };
+const handleFollow = () => {
+  setFollowed(prev => {
+    const newState = !prev;
+
+    setFollowers(f =>
+      newState ? f + 1 : Math.max(0, f - 1)
+    );
+
+    return newState;
+  });
+
+  setShowHeart(true);
+  setTimeout(() => setShowHeart(false), 800);
+};
 
   return (
     <section className="layout">

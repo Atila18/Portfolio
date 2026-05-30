@@ -7,10 +7,10 @@ export default function ProfileCard() {
   const [showHeart, setShowHeart] = useState(false);
 
   // 📊 followers init localStorage
-  const [followers, setFollowers] = useState(() => {
-    const saved = localStorage.getItem("followers");
-    return saved ? JSON.parse(saved) : 0 ;
-  });
+const [followers, setFollowers] = useState(() => {
+  const saved = localStorage.getItem("followers");
+  return saved ? JSON.parse(saved) : 0; // 👈 PART À 0
+});
 
   // 💾 save followers
   useEffect(() => {

@@ -9,7 +9,7 @@ export default function ProfileCard() {
   // 📊 followers init localStorage
   const [followers, setFollowers] = useState(() => {
     const saved = localStorage.getItem("followers");
-    return saved ? JSON.parse(saved) : 0;
+    return saved ? JSON.parse(saved) : 0 ;
   });
 
   // 💾 save followers
@@ -22,20 +22,20 @@ export default function ProfileCard() {
     localStorage.setItem("followed", JSON.stringify(followed));
   }, [followed]);
 
-  const handleFollow = () => {
-    // 🔁 on utilise la valeur actuelle AVANT update
-    setFollowed(prev => {
-      const newState = !prev;
+const handleFollow = () => {
+  setFollowed(prev => {
+    const newState = !prev;
 
-      setFollowers(f => newState ? f + 1 : f - 1);
+    setFollowers(f =>
+      newState ? f + 1 : Math.max(0, f - 1)
+    );
 
-      return newState;
-    });
+    return newState;
+  });
 
-    // ❤️ animation coeur
-    setShowHeart(true);
-    setTimeout(() => setShowHeart(false), 800);
-  };
+  setShowHeart(true);
+  setTimeout(() => setShowHeart(false), 800);
+};
 
   return (
     <section className="layout">

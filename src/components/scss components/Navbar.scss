@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
-
 /* ===== NAVBAR PRINCIPALE ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2.5px 60px;
-  font-family: "Imperial Script", cursive;
+  font-family: 'Imperial Script', cursive !important;
 }
 
 /* ===== LIENS ===== */

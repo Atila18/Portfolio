@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import './scss components/Navbar.scss'
 import Logo from './logo/Logo.png'
-import ('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap')
 
 
 function Navbar() {
